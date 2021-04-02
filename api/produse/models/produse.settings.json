@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produses",
+  "info": {
+    "name": "Produse",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Nume": {
+      "type": "string"
+    },
+    "Pret": {
+      "type": "decimal"
+    },
+    "imagine": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "Descriere": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Nume"
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "meta_description": {
+      "type": "text"
+    }
+  }
+}
